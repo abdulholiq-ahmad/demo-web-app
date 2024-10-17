@@ -1,0 +1,16 @@
+import Button from "../button/Button";
+import { useTelegram } from "../../hooks/useTelegram";
+import "./Header.css";
+
+const Header = () => {
+  const { user, onClose } = useTelegram();
+
+  return (
+    <div className={"header"}>
+      <Button onClick={onClose}>Berkitish</Button>
+      <span className={"username"}>{user?.username}</span>
+    </div>
+  );
+};
+
+export default Header;
